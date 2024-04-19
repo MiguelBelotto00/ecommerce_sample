@@ -104,6 +104,36 @@ abstract class AppLocalization {
   /// In es, this message translates to:
   /// **'Iniciar sesión'**
   String get login;
+
+  /// No description provided for @logout.
+  ///
+  /// In es, this message translates to:
+  /// **'Cerrar sesión'**
+  String get logout;
+
+  /// No description provided for @appVersion.
+  ///
+  /// In es, this message translates to:
+  /// **'versión:'**
+  String get appVersion;
+
+  /// No description provided for @welcomeMessage.
+  ///
+  /// In es, this message translates to:
+  /// **'Bienvenido {userName}'**
+  String welcomeMessage(String userName);
+
+  /// No description provided for @myData.
+  ///
+  /// In es, this message translates to:
+  /// **'Mis datos'**
+  String get myData;
+
+  /// No description provided for @myFavorites.
+  ///
+  /// In es, this message translates to:
+  /// **'Mis favoritos'**
+  String get myFavorites;
 }
 
 class _AppLocalizationDelegate extends LocalizationsDelegate<AppLocalization> {

@@ -1,4 +1,4 @@
-import 'package:ecommerce_sample/src/helpers/extensions.dart';
+import 'package:ecommerce_sample/core/helpers/extensions.dart';
 import 'package:flutter/material.dart';
 
 class TopRoundedContainer extends StatelessWidget {

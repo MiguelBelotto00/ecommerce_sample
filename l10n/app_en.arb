@@ -1,5 +1,19 @@
 {
     "@@locale": "en",
     "welcome": "Welcome",
-    "login": "Login"
+    "login": "Login",
+    "logout": "Logout",
+    "appVersion": "App version",
+    "welcomeMessage": "Welcome {userName}",
+    "@welcomeMessage": {
+        "placeholders": {
+            "userName": {
+                "type": "String"
+            }
+        }
+    },
+    "myData": "My data",
+    "myFavorites": "My favorites"
+
+
 }

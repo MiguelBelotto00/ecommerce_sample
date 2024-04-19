@@ -1,21 +1,22 @@
 import 'package:ecommerce_sample/src/features/home/presentation/screens/home.dart';
-import 'package:ecommerce_sample/src/features/onboarding/presentation/screens/onboarding.dart';
-import 'package:ecommerce_sample/src/helpers/extensions.dart';
-import 'package:ecommerce_sample/src/helpers/top_rounded_container.dart';
+import 'package:ecommerce_sample/core/helpers/extensions.dart';
+import 'package:ecommerce_sample/core/helpers/top_rounded_container.dart';
+import 'package:ecommerce_sample/src/features/login/presentation/provider/login_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-class Login extends StatefulWidget {
+class Login extends ConsumerStatefulWidget {
   const Login({super.key});
 
   static const String route = '/login';
   static const String name = 'login';
 
   @override
-  State<Login> createState() => _LoginState();
+  ConsumerState<ConsumerStatefulWidget> createState() => _LoginState();
 }
 
-class _LoginState extends State<Login> {
+class _LoginState extends ConsumerState<Login> {
   bool showPassword = true;
   final TextEditingController _passwordController = TextEditingController();
   final TextEditingController _userController = TextEditingController();
@@ -76,11 +77,6 @@ class _LoginState extends State<Login> {
                         obscureText: showPassword,
                       ),
                       const SizedBox(height: 20),
-                      TextButton(
-                          onPressed: () {
-                            GoRouter.of(context).push(OnboardingScreen.route);
-                          },
-                          child: const Text('Crear cuenta'))
                     ],
                   ),
                 ),
@@ -92,7 +88,14 @@ class _LoginState extends State<Login> {
       floatingActionButton: SizedBox(
         width: screensize.width * 0.8,
         child: ElevatedButton(
-          onPressed: () => validateForm(context),
+          onPressed: () {
+            validateForm(context);
+            // This not working always return 403.
+            ref.watch(loginProviderProvider(
+              _userController.text,
+              _passwordController.text,
+            ));
+          },
           child: Text(
             context.l10n.login,
             style: const TextStyle(
