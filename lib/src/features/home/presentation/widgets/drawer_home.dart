@@ -4,6 +4,7 @@ import 'package:ecommerce_sample/core/helpers/extensions.dart';
 import 'package:ecommerce_sample/src/features/home/presentation/providers/providers.dart';
 import 'package:ecommerce_sample/src/features/login/presentation/screens/login.dart';
 import 'package:ecommerce_sample/src/features/my_data/presentation/screens/my_data_screen.dart';
+import 'package:ecommerce_sample/src/features/products/presentations/screens/favorite_products_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
@@ -60,7 +61,7 @@ class DrawerHome extends ConsumerWidget {
             ),
             TextButton(
               onPressed: () {
-                Navigator.of(context).pop();
+                GoRouter.of(context).pushNamed(FavoriteProductsScreen.name);
               },
               child: Text(
                 context.l10n.myFavorites,

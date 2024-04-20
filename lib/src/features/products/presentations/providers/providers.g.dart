@@ -54,5 +54,20 @@ final favoriteProductsProvider =
 );
 
 typedef _$FavoriteProducts = Notifier<List<ProductEntity>>;
+String _$cartProductsHash() => r'72529f3d2e5fc4f635402d2c5298f0978a69238d';
+
+/// See also [CartProducts].
+@ProviderFor(CartProducts)
+final cartProductsProvider =
+    NotifierProvider<CartProducts, List<ProductEntity>>.internal(
+  CartProducts.new,
+  name: r'cartProductsProvider',
+  debugGetCreateSourceHash:
+      const bool.fromEnvironment('dart.vm.product') ? null : _$cartProductsHash,
+  dependencies: null,
+  allTransitiveDependencies: null,
+);
+
+typedef _$CartProducts = Notifier<List<ProductEntity>>;
 // ignore_for_file: type=lint
 // ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member

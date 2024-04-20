@@ -1,5 +1,6 @@
 import 'package:ecommerce_sample/src/features/home/presentation/widgets/appbar_homer.dart';
 import 'package:ecommerce_sample/src/features/home/presentation/widgets/drawer_home.dart';
+import 'package:ecommerce_sample/src/features/products/presentations/screens/cart_products_screen.dart';
 import 'package:ecommerce_sample/src/features/products/presentations/screens/favorite_products_screen.dart';
 import 'package:ecommerce_sample/src/features/products/presentations/screens/products_screens_list.dart';
 import 'package:flutter/material.dart';
@@ -22,9 +23,11 @@ class Home extends ConsumerWidget {
       appBar: AppBarHome(),
       body: ProductsScreens(),
       bottomNavigationBar: BottomNavigationBar(
+          type: BottomNavigationBarType.fixed,
           onTap: (value) {
-            if (value == 1)
+            if (value == 2)
               GoRouter.of(context).push(FavoriteProductsScreen.route);
+            if (value == 1) GoRouter.of(context).push(CartProductsScreen.route);
           },
           items: [
             BottomNavigationBarItem(
@@ -32,6 +35,20 @@ class Home extends ConsumerWidget {
                   Icons.home_outlined,
                 ),
                 label: 'home'),
+            BottomNavigationBarItem(
+                icon: Container(
+                  height: 50,
+                  width: 50,
+                  decoration: BoxDecoration(
+                    color: Colors.blue,
+                    borderRadius: BorderRadius.circular(50),
+                  ),
+                  child: Icon(
+                    Icons.shopping_cart,
+                    color: Colors.white,
+                  ),
+                ),
+                label: 'cart'),
             BottomNavigationBarItem(
                 icon: Icon(
                   Icons.favorite_outline,

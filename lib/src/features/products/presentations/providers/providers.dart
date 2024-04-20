@@ -58,3 +58,23 @@ class FavoriteProducts extends _$FavoriteProducts {
     }
   }
 }
+
+@Riverpod(keepAlive: true)
+class CartProducts extends _$CartProducts {
+  @override
+  List<ProductEntity> build() {
+    return [];
+  }
+
+  void addToCart(ProductEntity product) {
+    if (state.contains(product)) {
+      state = state.where((element) => element.id != product.id).toList();
+    } else {
+      state = [...state, product];
+    }
+  }
+
+  void buyCart() {
+    ref.invalidateSelf();
+  }
+}

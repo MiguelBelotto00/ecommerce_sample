@@ -9,7 +9,7 @@ class LoginRepositoryImpl extends LoginRepository {
 
   final NetworkClient _client;
   @override
-  Future<Response<AuthModel>> getAuth(String user, String password) async {
+  Future<Result<AuthModel>> getAuth(String user, String password) async {
     final response =
         _client.post('/auth', fromJsonFunction: AuthModel.fromMap, body: {
       'username': user,

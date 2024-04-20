@@ -1,7 +1,10 @@
 import 'package:ecommerce_sample/src/features/home/presentation/screens/home.dart';
 import 'package:ecommerce_sample/src/features/login/presentation/screens/login.dart';
 import 'package:ecommerce_sample/src/features/my_data/presentation/screens/my_data_screen.dart';
+import 'package:ecommerce_sample/src/features/products/domain/entities/product_entity.dart';
+import 'package:ecommerce_sample/src/features/products/presentations/screens/cart_products_screen.dart';
 import 'package:ecommerce_sample/src/features/products/presentations/screens/favorite_products_screen.dart';
+import 'package:ecommerce_sample/src/features/products/presentations/screens/product_screen_detail.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
@@ -33,6 +36,22 @@ final router = GoRouter(
       path: FavoriteProductsScreen.route,
       builder: (context, state) {
         return FavoriteProductsScreen();
+      },
+    ),
+    GoRoute(
+      name: ProductScreenDetail.name,
+      path: ProductScreenDetail.route,
+      builder: (context, state) {
+        final extra = state.extra as Map<String, dynamic>;
+        final product = extra['product'] as ProductEntity;
+        return ProductScreenDetail(product: product);
+      },
+    ),
+    GoRoute(
+      name: CartProductsScreen.name,
+      path: CartProductsScreen.route,
+      builder: (context, state) {
+        return CartProductsScreen();
       },
     ),
   ],

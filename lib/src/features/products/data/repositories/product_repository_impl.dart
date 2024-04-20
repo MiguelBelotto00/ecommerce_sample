@@ -12,7 +12,7 @@ class ProductRepositoryImpl extends ProductRepository {
   final NetworkClient networkClient;
 
   @override
-  Future<Response<ProductModel>> getProduct(String id) async {
+  Future<Result<ProductModel>> getProduct(String id) async {
     final response = await networkClient.get(
       '/products/$id',
       fromJsonFunction: ProductModel.fromMap,
@@ -22,7 +22,7 @@ class ProductRepositoryImpl extends ProductRepository {
   }
 
   @override
-  Future<Response<List<ProductModel>>> getProducts(num skip) async {
+  Future<Result<List<ProductModel>>> getProducts(num skip) async {
     final response = await networkClient.get(
       '/products',
       fromJsonFunction: ProductListModel.fromJson,

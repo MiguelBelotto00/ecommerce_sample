@@ -12,7 +12,7 @@ class UserRepositoryImpl extends UserRepository {
   final NetworkClient networkClient;
 
   @override
-  Future<Response<UserModel>> getUser() {
+  Future<Result<UserModel>> getUser() {
     final int random = Random().nextInt(100);
 
     return networkClient.get(
