@@ -1,16 +1,43 @@
-# ecommerce_sample
+# Ecommerce Sample
 
-A new Flutter project.
+Hello welcome, I hope you are feeling well.
+Thank you for viewing my repo, here's how you can run it on your machine
 
-## Getting Started
+## Requeriments
+- Flutter SDK 3.19.2
 
-This project is a starting point for a Flutter application.
+## Run
+- Clone repository:
+```c
+git@github.com:MiguelBelotto00/ecommerce_sample.git
+```
+- Open project directory:
+```c
+cd users/your_user/Desktop/ecommerce_sample
+```
+- Get Dependencies:
+```c
+//with fvm
+    fvm use 3.19.2
+    fvm flutter pub get
+//with flutter
+    flutter pub get
+```
+- Run the app
+```c
+//Please connect a device with developer mode or use a Emulator
+flutter run lib/main.dart
+```
 
-A few resources to get you started if this is your first Flutter project:
+## Gallery
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+| Image | Image |
+|-------|-------|
+| ![image](assets/login.png) | ![image](assets/login_with_error.png) |
+| ![image](assets/home.png) | ![image](assets/drawer.png) |
+| ![image](assets/favorite.png) | ![image](assets/cart.png) |
+| ![image](assets/my_data.png) | | [![video](assets/Simulator%20Screen%20Recording%20-%20iPhone%2015%20Pro%20Max%20-%202024-04-19%20at%2021.19.06.mp4)]
+
+
+
