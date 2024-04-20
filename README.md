@@ -37,7 +37,10 @@ flutter run lib/main.dart
 | ![image](assets/login.png) | ![image](assets/login_with_error.png) |
 | ![image](assets/home.png) | ![image](assets/drawer.png) |
 | ![image](assets/favorite.png) | ![image](assets/cart.png) |
-| ![image](assets/my_data.png) | | [![video](assets/Simulator%20Screen%20Recording%20-%20iPhone%2015%20Pro%20Max%20-%202024-04-19%20at%2021.19.06.mp4)]
+| ![image](assets/my_data.png) |
+
+
+https://github.com/MiguelBelotto00/ecommerce_sample/assets/84353662/e6b9a467-2da1-4b67-ad8d-b3e9af787e25
 
 
 
